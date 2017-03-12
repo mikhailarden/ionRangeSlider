@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Ion.RangeSlider - test</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+
+	<div class="row">
+		<div class="col-md-3">
+			<h3 id="bedroomstx" class="text-right">Bedrooms: </h3>
+		</div>
+		<div class="col-md-6">
+		    <div>
+				<input type="text" id="bedrooms" value="" name="bedrooms" />
+			</div>
+		</div>		
+	</div><!-- /.row -->
+
+	<div class="row">
+		<div class="col-md-3">
+			<h3 id="bathroomstx" class="text-right">Bathrooms: </h3>
+		</div>
+		<div class="col-md-6">
+			<div>
+				<input type="text" id="bathrooms" value="" name="bathrooms" />
+			</div>	
+		</div>		
+	</div><!-- /.row -->
+	
+
+
+
+
+<!-- All JS -->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/ion.rangeSlider.js"></script>
+
+<script>
+
+    $(function () {
+
+        $("#bedrooms").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 10,
+            from: 0,
+            to: 10,
+            type: 'single',
+            step: 1,
+            prefix: "",
+            grid: false,
+            onChange: function (data) {
+                document.getElementById("bedroomstx").innerHTML = "Bedrooms: " + data.from;
+            }
+        });
+
+		$("#bathrooms").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: false,
+            min: 0,
+            max: 10,
+            from: 0,
+            to: 10,
+            type: 'single',
+            step: 1,
+            prefix: "",
+            grid: false,
+            onChange: function (data) {
+                document.getElementById("bathroomstx").innerHTML = "Bathrooms: " + data.from;
+            }
+        });
+		
+    });
+</script>
+
+
+
+
+</body>
+</html>
